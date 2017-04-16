@@ -1,10 +1,12 @@
 # Announcements Microservice Client SDK for Node.js
 
-This is a Node.js client SDK for [pip-services-announces](https://github.com/pip-services/pip-services-announces) microservice.
+This is a Node.js client SDK for [pip-services-announcements](https://github.com/pip-services-support/pip-services-announcements-node) microservice.
 It provides an easy to use abstraction over communication protocols:
 
-* HTTP/REST client
+* HTTP client
 * Seneca client (see http://www.senecajs.org)
+* AWS Lambda client
+* Direct client
 
 <a name="links"></a> Quick Links:
 
@@ -19,7 +21,7 @@ Add dependency to the client SDK into **package.json** file of your project
     ...
     "dependencies": {
         ....
-        "pip-clients-announces-node": "^1.0.*",
+        "pip-clients-announcements-node": "^1.0.*",
         ...
     }
 }
@@ -38,17 +40,17 @@ npm update
 
 Inside your code get the reference to the client SDK
 ```javascript
-var sdk = new require('pip-clients-announces-node').Version1;
+var sdk = new require('pip-clients-announcements-node');
 ```
 
 Define client configuration parameters that match configuration of the microservice external API
 ```javascript
 // Client configuration
 var config = {
-    endpoint: {
+    connection: {
         protocol: 'http',
         host: 'localhost', 
-        port: 8011
+        port: 8080
     }
 };
 ```
@@ -56,10 +58,10 @@ var config = {
 Instantiate the client and open connection to the microservice
 ```javascript
 // Create the client instance
-var client = sdk.AnnouncementsRestClient(config);
+var client = sdk.AnnouncementsHttpClientV1(config);
 
 // Connect to the microservice
-client.open(function(err) {
+client.open(null, function(err) {
     if (err) {
         console.error('Connection to the microservice failed');
         console.error(err);
@@ -73,13 +75,13 @@ client.open(function(err) {
 
 Now the client is ready to perform operations
 ```javascript
-// Register a new announcement
+// Create a new announcement
 client.createAnnouncement(
     null,
     { 
         category: 'maintenance',
-        title: 'Maintenance on Jan 01',
-        content: 'Our servers will be shutdown for maintenance on Jan 01'
+        title: { en: 'Maintenance on Jan 01' },
+        content: { en: 'Our servers will be shutdown for maintenance on Jan 01' }
     },
     function (err, announcement) {
         ...
@@ -88,12 +90,12 @@ client.createAnnouncement(
 ```
 
 ```javascript
-// Get random announcement
+// Get a random announcement
 client.getRandomAnnouncement(
     null,
     {},
     function(err, announcement) {
-    ...    
+        ...    
     }
 );
 ```    

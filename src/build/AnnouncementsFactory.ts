@@ -1,16 +1,22 @@
-import { ComponentFactory } from 'pip-services-runtime-node';
-import { DefaultFactory } from 'pip-services-runtime-node';
+import { Descriptor } from 'pip-services-commons-node';
+import { Factory } from 'pip-services-commons-node';
 
-let Version1 = require('../version1');
+import { AnnouncementsDirectClientV1 } from '../version1/AnnouncementsDirectClientV1';
+import { AnnouncementsHttpClientV1 } from '../version1/AnnouncementsHttpClientV1';
+import { AnnouncementsSenecaClientV1 } from '../version1/AnnouncementsSenecaClientV1';
 
-export class AnnouncementsFactory extends ComponentFactory {
-	public static Instance: AnnouncementsFactory = new AnnouncementsFactory();
+export class AnnouncementsFactory extends Factory {
+	public static Descriptor: Descriptor = new Descriptor('pip-services-announcements', 'factory', 'default', 'default', '1.0');
+	public static DirectClientV1Descriptor = new Descriptor('pip-services-announcements', 'client', 'direct', 'default', '1.0');
+	public static HttpClientV1Descriptor = new Descriptor('pip-services-announcements', 'client', 'http', 'default', '1.0');
+	public static SenecaClientV1Descriptor = new Descriptor('pip-services-announcements', 'client', 'seneca', 'default', '1.0');
 	
 	constructor() {
-		super(DefaultFactory.Instance);
+		super();
 
-		this.register(Version1.AnnouncementsRestClient.Descriptor, Version1.AnnouncementsRestClient);
-		this.register(Version1.AnnouncementsSenecaClient.Descriptor, Version1.AnnouncementsSenecaClient);
-		this.register(Version1.AnnouncementsLambdaClient.Descriptor, Version1.AnnouncementsLambdaClient);
-	}	
+		this.registerAsType(AnnouncementsFactory.DirectClientV1Descriptor, AnnouncementsDirectClientV1);
+		this.registerAsType(AnnouncementsFactory.HttpClientV1Descriptor, AnnouncementsHttpClientV1);
+		this.registerAsType(AnnouncementsFactory.SenecaClientV1Descriptor, AnnouncementsSenecaClientV1);
+	}
+	
 }
