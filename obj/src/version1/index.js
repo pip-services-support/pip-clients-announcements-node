@@ -16,4 +16,6 @@ var AnnouncementsSenecaClientV1_1 = require("./AnnouncementsSenecaClientV1");
 exports.AnnouncementsSenecaClientV1 = AnnouncementsSenecaClientV1_1.AnnouncementsSenecaClientV1;
 var AnnouncementsDirectClientV1_1 = require("./AnnouncementsDirectClientV1");
 exports.AnnouncementsDirectClientV1 = AnnouncementsDirectClientV1_1.AnnouncementsDirectClientV1;
+var AnnouncementStatusV1_1 = require("./AnnouncementStatusV1");
+exports.AnnouncementStatusV1 = AnnouncementStatusV1_1.AnnouncementStatusV1;
 //# sourceMappingURL=index.js.map
