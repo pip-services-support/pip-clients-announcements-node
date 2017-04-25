@@ -9,7 +9,7 @@ import { DirectClient } from 'pip-services-net-node';
 import { AnnouncementV1 } from './AnnouncementV1';
 import { PartyReferenceV1 } from './PartyReferenceV1';
 import { IAnnouncementsClientV1 } from './IAnnouncementsClientV1';
-//import { IAnnouncementsBusinessLogic } from 'pip-services-announcements-node';
+//import { IAnnouncementsController } from 'pip-services-announcements-node';
 
 export class AnnouncementsDirectClientV1 extends DirectClient<any> implements IAnnouncementsClientV1 {
             
