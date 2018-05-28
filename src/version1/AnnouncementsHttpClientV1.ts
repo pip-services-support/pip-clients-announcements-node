@@ -12,7 +12,7 @@ import { IAnnouncementsClientV1 } from './IAnnouncementsClientV1';
 export class AnnouncementsHttpClientV1 extends CommandableHttpClient implements IAnnouncementsClientV1 {
 
     constructor(config?: any) {
-        super('announcements');
+        super('v1/announcements');
 
         if (config != null)
             this.configure(ConfigParams.fromValue(config));
