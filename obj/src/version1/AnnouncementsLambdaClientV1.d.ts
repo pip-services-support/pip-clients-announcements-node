@@ -1,7 +1,7 @@
-import { FilterParams } from 'pip-services-commons-node';
-import { PagingParams } from 'pip-services-commons-node';
-import { DataPage } from 'pip-services-commons-node';
-import { CommandableLambdaClient } from 'pip-services-aws-node';
+import { FilterParams } from 'pip-services3-commons-node';
+import { PagingParams } from 'pip-services3-commons-node';
+import { DataPage } from 'pip-services3-commons-node';
+import { CommandableLambdaClient } from 'pip-services3-aws-node';
 import { AnnouncementV1 } from './AnnouncementV1';
 import { IAnnouncementsClientV1 } from './IAnnouncementsClientV1';
 export declare class AnnouncementsLambdaClientV1 extends CommandableLambdaClient implements IAnnouncementsClientV1 {

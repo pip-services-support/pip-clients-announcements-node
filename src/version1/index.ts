@@ -5,6 +5,5 @@ export { AnnouncementV1 } from './AnnouncementV1';
 export { IAnnouncementsClientV1 } from './IAnnouncementsClientV1';
 export { AnnouncementsHttpClientV1 } from './AnnouncementsHttpClientV1';
 export { AnnouncementsLambdaClientV1 } from './AnnouncementsLambdaClientV1';
-export { AnnouncementsSenecaClientV1 } from './AnnouncementsSenecaClientV1';
 export { AnnouncementsDirectClientV1 } from './AnnouncementsDirectClientV1';
 export { AnnouncementStatusV1 } from './AnnouncementStatusV1';

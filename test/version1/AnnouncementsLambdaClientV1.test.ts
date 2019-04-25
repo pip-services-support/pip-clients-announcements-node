@@ -1,6 +1,6 @@
 let process = require('process');
 
-import { ConfigParams } from 'pip-services-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
 
 import { AnnouncementsClientFixtureV1 } from './AnnouncementsClientFixtureV1';
 import { AnnouncementsLambdaClientV1 } from '../../src/version1/AnnouncementsLambdaClientV1';

@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const pip_services_commons_node_1 = require("pip-services-commons-node");
-const pip_services_commons_node_2 = require("pip-services-commons-node");
-const pip_services_rpc_node_1 = require("pip-services-rpc-node");
+const pip_services3_commons_node_1 = require("pip-services3-commons-node");
+const pip_services3_commons_node_2 = require("pip-services3-commons-node");
+const pip_services3_rpc_node_1 = require("pip-services3-rpc-node");
 //import { IAnnouncementsController } from 'pip-services-announcements-node';
-class AnnouncementsDirectClientV1 extends pip_services_rpc_node_1.DirectClient {
+class AnnouncementsDirectClientV1 extends pip_services3_rpc_node_1.DirectClient {
     constructor(config) {
         super();
-        this._dependencyResolver.put('controller', new pip_services_commons_node_2.Descriptor("pip-services-announcements", "controller", "*", "*", "*"));
+        this._dependencyResolver.put('controller', new pip_services3_commons_node_2.Descriptor("pip-services-announcements", "controller", "*", "*", "*"));
         if (config != null)
-            this.configure(pip_services_commons_node_1.ConfigParams.fromValue(config));
+            this.configure(pip_services3_commons_node_1.ConfigParams.fromValue(config));
     }
     getAnnouncements(correlationId, filter, paging, callback) {
         let timing = this.instrument(correlationId, 'announcements.get_announcements');

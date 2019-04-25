@@ -1,7 +1,7 @@
-import { FilterParams } from 'pip-services-commons-node';
-import { PagingParams } from 'pip-services-commons-node';
-import { DataPage } from 'pip-services-commons-node';
-import { DirectClient } from 'pip-services-rpc-node';
+import { FilterParams } from 'pip-services3-commons-node';
+import { PagingParams } from 'pip-services3-commons-node';
+import { DataPage } from 'pip-services3-commons-node';
+import { DirectClient } from 'pip-services3-rpc-node';
 import { AnnouncementV1 } from './AnnouncementV1';
 import { IAnnouncementsClientV1 } from './IAnnouncementsClientV1';
 export declare class AnnouncementsDirectClientV1 extends DirectClient<any> implements IAnnouncementsClientV1 {
