@@ -1,6 +1,6 @@
 {
     "name": "pip-clients-announcements-node",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Conceptual Vision Consulting LLC",
     "description": "Node.js client sdk for pip-services-announcements microservice",
     "contributors": [
@@ -27,7 +27,7 @@
     "engines": {
         "node": ">=0.6.14"
     },
-    "private": true,
+    "private": false,
     "scripts": {
         "build": "tsc",
         "watch": "tsc --watch",
@@ -48,13 +48,9 @@
         "@types/async": "^2.0.0",
         "@types/chai": "*",
         "@types/mocha": "*",
-        "@types/mongodb": "^2.1.38",
-        "@types/mongoose": "^4.7.4",
         "restify": "^4.3.0",
         "chai": "*",
-        "matcha": "*",
         "mocha": "*",
-        "aws-sdk": "*",
-        "pip-services-announcements-node": "git+ssh://git@github.com:pip-services-support/pip-services-announcements-node.git"
+        "pip-services-announcements-node": "^1.1.0"
     }
 }

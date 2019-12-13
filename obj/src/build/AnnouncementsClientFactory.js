@@ -11,8 +11,8 @@ class AnnouncementsClientFactory extends pip_services3_components_node_1.Factory
         this.registerAsType(AnnouncementsClientFactory.HttpClientV1Descriptor, AnnouncementsHttpClientV1_1.AnnouncementsHttpClientV1);
     }
 }
+exports.AnnouncementsClientFactory = AnnouncementsClientFactory;
 AnnouncementsClientFactory.Descriptor = new pip_services3_commons_node_1.Descriptor('pip-services-announcements', 'factory', 'default', 'default', '1.0');
 AnnouncementsClientFactory.DirectClientV1Descriptor = new pip_services3_commons_node_1.Descriptor('pip-services-announcements', 'client', 'direct', 'default', '1.0');
 AnnouncementsClientFactory.HttpClientV1Descriptor = new pip_services3_commons_node_1.Descriptor('pip-services-announcements', 'client', 'http', 'default', '1.0');
-exports.AnnouncementsClientFactory = AnnouncementsClientFactory;
 //# sourceMappingURL=AnnouncementsClientFactory.js.map
