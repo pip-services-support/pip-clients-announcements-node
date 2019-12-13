@@ -20,7 +20,7 @@ class AnnouncementsDirectClientV1 extends pip_services3_rpc_node_1.DirectClient 
     }
     getRandomAnnouncement(correlationId, filter, callback) {
         let timing = this.instrument(correlationId, 'announcements.get_random_announcement');
-        this._controller.getAnnouncements(correlationId, filter, (err, announcement) => {
+        this._controller.getRandomAnnouncement(correlationId, filter, (err, announcement) => {
             timing.endTiming();
             callback(err, announcement);
         });
